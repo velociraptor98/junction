@@ -1,5 +1,7 @@
 import Emoji from "../user/Emoji";
 import { useState } from "react";
+import axios from "axios";
+
 function MainJournal() {
     const [textEmo,setTextEmo] = useState("");
     const emotionSelector = (emotion) => {
@@ -16,7 +18,7 @@ function MainJournal() {
         // Replace with the axios call to save the journal entry
     }
     return (
-        <div className="h-2/3 flex flex-col space-y-4 items-center justify-center"> 
+        <div className="h-2/3 w-2/3 flex flex-col space-y-4 items-center justify-center"> 
             <h2 className="text-4xl font-bold mb-2 text-white flex-auto ml-auto mr-auto">
                 Journal Entry
             </h2>
