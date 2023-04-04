@@ -1,7 +1,7 @@
-function Landing(){
+function Landing(props){
     return (
         <div className="landing-main">
-            HEYOOOOOOOOOOOOO
+            {(props.name || "DEMO USER")}
         </div>
     )
 }
