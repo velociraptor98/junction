@@ -5,8 +5,6 @@ import MainJournal from "./components/journal/MainJournal";
 import Helpline from "./components/helpline/Helpline";
 import { Button } from "flowbite-react";
 import axios from "axios";
-// Handle data for login user
-// TODO CHANGE PROPS TO DATA RECEIVED FROM API
 function App() {
   const [currentState, setCurrentState] = useState("land");
   const [currentEmotion, setCurrentEmotion] = useState("");
@@ -85,7 +83,8 @@ function App() {
           currentEmotion={currentEmotion}
           updateStateHandle={updateState} />
         }
-        {currentState === 'journal' && <MainJournal />}
+        {currentState === 'journal' && <MainJournal 
+        userInfo = {userInfo}/>}
         {currentState === 'help' && <Helpline />}
       </div>
     </div>
