@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import MainJournal from "./components/journal/MainJournal";
 import Helpline from "./components/helpline/Helpline";
 import { Button } from "flowbite-react";
+import axios from "axios";
 // Handle data for login user
 // TODO CHANGE PROPS TO DATA RECEIVED FROM API
 function App() {
   const [currentState, setCurrentState] = useState("land");
   const [currentEmotion, setCurrentEmotion] = useState("");
   const [currentPallete, setCurrentPallete] = useState("bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500")
+  const [userInfo,setUserInfo] = useState("");
   const updateState = (state) => {
     setCurrentState(state);
   }
@@ -34,6 +36,17 @@ function App() {
       setCurrentPallete("bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500");
     }
   }, [currentEmotion]);
+
+  useEffect(()=>{
+    const fetchData = async()=>{
+      const data = await axios.get('http://localhost:3500/users/');
+      if(data){
+        setUserInfo(data.data[0]);
+        console.log(data.data[0]);
+      }
+    }
+    fetchData().catch(console.error);
+  },[])
   return (
     <div>
       {/* <nav className="bg-white border-gray-200 dark:bg-gray-900"> */}
@@ -64,7 +77,7 @@ function App() {
       </nav>
       <div className={`h-screen ${currentPallete} flex items-center justify-center h-screen`}>
         {currentState === 'land' && <Landing
-          name="DEMO"
+          name = { userInfo.username || "demo user"}
           updateStateHandle={updateState}
           updateCurrentEmotion={updateCurrentEmotion} />
         }
