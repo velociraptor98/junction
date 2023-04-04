@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: ".env" });
 // 3500 fallback port
 const port = process.env.PORT || 3500;
 app.use(cors());

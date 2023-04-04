@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const Db = process.env.MONGO_DB_URL || "mongodb+srv://ankitbasare10:3xsJLHI66PaRBzgb@cluster0.dg1qpab.mongodb.net/?retryWrites=true&w=majority";
+const Db = process.env.MONGO_DB_URL;
 console.log(Db);
 const client = new MongoClient(Db, {
   useNewUrlParser: true,
@@ -16,8 +16,11 @@ module.exports = {
       {
         console.log("Successfully connected to MongoDB."); 
       }
+      if(err){
+        console.log("ERROR Received: ",err);
+      }
       return callback(err);
-         });
+    });
   },
   getDb: function () {
     return _db;

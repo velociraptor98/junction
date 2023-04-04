@@ -7,7 +7,8 @@ const eventRoutes = express.Router();
 const dbo = require("../../db/conn");
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
-eventRoutes.route("/record").get(function (req, res) {
-    console.log("IN EVENTS");
+eventRoutes.route("/event").get(function (req, res) {
+    console.log("IN event");
+    return res.sendStatus(200);
 });
 module.exports = eventRoutes;

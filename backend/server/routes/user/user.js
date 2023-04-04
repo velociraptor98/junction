@@ -10,5 +10,6 @@ const ObjectId = require("mongodb").ObjectId;
 
 userRoutes.route("/user").get(function (req, res) {
     console.log("IN USER");
+    return res.sendStatus(200)
 });
 module.exports = userRoutes;

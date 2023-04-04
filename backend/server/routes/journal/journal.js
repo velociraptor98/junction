@@ -10,5 +10,6 @@ const ObjectId = require("mongodb").ObjectId;
 
 journalRoutes.route("/journal").get(function (req, res) {
     console.log("IN journal");
+    return res.sendStatus(200)
 });
 module.exports = journalRoutes;
