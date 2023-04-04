@@ -1,5 +1,7 @@
 import Emoji from "../user/Emoji";
 import { useState } from "react";
+import axios from "axios";
+
 function MainJournal() {
     const [textEmo,setTextEmo] = useState("");
     const emotionSelector = (emotion) => {
@@ -16,7 +18,7 @@ function MainJournal() {
         // Replace with the axios call to save the journal entry
     }
     return (
-        <div className="h-2/3 flex flex-col space-y-4 items-center justify-center"> 
+        <div className="h-2/3 w-2/3 flex flex-col space-y-4 items-center justify-center"> 
             <h2 className="text-4xl font-bold mb-2 text-white flex-auto ml-auto mr-auto">
                 Journal Entry
             </h2>
@@ -32,7 +34,7 @@ function MainJournal() {
             <button
             onClick={() => handleSubmission()} 
             type="button" 
-            class="w-1/5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+            className="w-1/5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
                 Submit
             </button>
         </div>

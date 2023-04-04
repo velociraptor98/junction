@@ -3,12 +3,11 @@ function Landing(props) {
 
     const clickHandler = (emotion) => {
         // Fill over the code for handling the next pages
-        console.log("EMOTION: ",emotion);
-        // Swap the component to be loaded
         props.updateStateHandle("feed");
+        props.updateCurrentEmotion(emotion);
     }
     return (
-        <div className="container mx-auto px-6 flex-col">
+        <div className="container  px-6 flex-col">
             <h2 className="text-4xl font-bold mb-2 text-white flex-auto ml-auto mr-auto">
                 {`Hey, ${props.name}`}
             </h2>
