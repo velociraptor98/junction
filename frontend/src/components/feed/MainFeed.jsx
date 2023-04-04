@@ -21,7 +21,8 @@ function MainFeed(props) {
             <h3 className="text-2xl mb-8 text-gray-200">
                 {`In case you were feeling, ${props.currentEmotion}`}
             </h3>
-            <CardGroup data={data} />
+            <CardGroup data={data}
+            currentEmotion = {props.currentEmotion || "Happy"} />
 
         </div>
 

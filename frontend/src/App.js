@@ -40,7 +40,6 @@ function App() {
       const data = await axios.get('http://localhost:3500/users/');
       if(data){
         setUserInfo(data.data[0]);
-        console.log(data.data[0]);
       }
     }
     fetchData().catch(console.error);

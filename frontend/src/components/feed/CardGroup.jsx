@@ -1,9 +1,12 @@
 import CardItem from "./CardItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 function CardGroup(props){
     // Use a simple iteration logic to get the current counter
     const[currentCounter,setCurrentCounter] = useState(0);
     const[itemList,setItemList] = useState([]);
+    const[eventData,setEventData] = useState([]);
     const selectionHandler = (select) => {
         let tempArray = itemList;
         tempArray.push(select);
@@ -13,11 +16,24 @@ function CardGroup(props){
         }
         console.log("HERER:",currentCounter);
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            console.log("CHECK: ",props.currentEmotion);
+            const data = await axios.get(`http://localhost:3500/events?tag=${props.currentEmotion}`);
+            if (data) {
+                setEventData(data.data[0]);
+                console.log(data.data[0]);
+            }
+        }
+        fetchData().catch(console.error);
+    }, [])
+
     return(
         <div>
             {
-            props.data[currentCounter] ? 
-            <CardItem  data = {props.data[currentCounter]}
+            eventData[currentCounter] ? 
+            <CardItem  data = {eventData[currentCounter]}
             selectionHandlerHandle = {selectionHandler}/> : 
             <h3 className="text-2xl mb-8 text-gray-200">
                 No more events for the day
