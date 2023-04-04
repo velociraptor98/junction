@@ -14,13 +14,11 @@ function App() {
     setCurrentState(state);
   }
   const updateCurrentEmotion = (emotion) => {
-    console.log("CHANGED EMOTION");
     setCurrentEmotion(emotion);
   }
 
   useEffect(() => {
-    console.log("IN this block");
-    if (currentEmotion === 'cry') {
+    if (currentEmotion === 'sad') {
       setCurrentPallete("bg-gradient-to-r from-blue-400 to-emerald-400");
     }
     else if (currentEmotion === 'indiff') {
@@ -43,11 +41,9 @@ function App() {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <a className="flex items-center">
             {/* <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Logo" /> */}
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jump</span>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hopp</span>
           </a>
-          <div class="flex items-center space-evenly">
-            {/* <a href="tel:5541251234" class="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">(555) 412-1234</a>
-            <a href="#" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a> */}
+          <div className="flex items-center space-evenly">
             <Button
             onClick={()=>updateState("journal")}
             className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-2">

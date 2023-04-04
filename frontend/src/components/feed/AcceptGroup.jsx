@@ -11,7 +11,7 @@ function AcceptGroup(props) {
                 strokeWidth="1.5" 
                 stroke="currentColor" 
                 className="w-6 h-6"
-                onClick={props.selection(1)}>
+                onClick={() => props.selectionHandle(1)}>
                     <path 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
@@ -28,7 +28,7 @@ function AcceptGroup(props) {
                 strokeWidth="1.5" 
                 stroke="currentColor" 
                 className="w-6 h-6"
-                onClick={props.selection(0)}>
+                onClick={() => props.selectionHandle(0)}>
                     <path 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 

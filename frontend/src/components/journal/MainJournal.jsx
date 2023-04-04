@@ -9,12 +9,10 @@ function MainJournal() {
     }
     const handleSubmission = () => {
         let textValue = document.getElementById("messageArea").value;
-        console.log(textValue);
         const payload = {
             'text' : textValue,
             'textSentiment' : textEmo
         }
-        console.log(payload);
         // Replace with the axios call to save the journal entry
     }
     return (
