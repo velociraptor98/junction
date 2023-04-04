@@ -21,7 +21,7 @@ function App() {
     if (currentEmotion === 'sad') {
       setCurrentPallete("bg-gradient-to-r from-blue-400 to-emerald-400");
     }
-    else if (currentEmotion === 'indiff') {
+    else if (currentEmotion === 'indifferent') {
       setCurrentPallete("bg-gradient-to-r from-violet-300 to-violet-400");
     }
     else if (currentEmotion === 'happy') {
