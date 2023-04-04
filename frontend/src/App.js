@@ -13,7 +13,7 @@ function App() {
     setCurrentEmotion(emotion);
   }
   return (
-  <div className = 'h-screen bg-gradient-to-l from-purple-600 via-pink-300 to-blue-400 flex items-center justify-center h-screen'>
+  <div className = 'h-screen bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center h-screen'>
    {currentState === 'land' && <Landing
    name = "DEMO"
    updateStateHandle = {updateState}
