@@ -8,7 +8,7 @@ function Landing(props) {
         props.updateStateHandle("feed");
     }
     return (
-        <div className="container mx-auto px-6 flex-col place-content-center">
+        <div className="container mx-auto px-6 flex-col">
             <h2 className="text-4xl font-bold mb-2 text-white flex-auto ml-auto mr-auto">
                 {`Hey, ${props.name}`}
             </h2>
