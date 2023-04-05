@@ -15,9 +15,14 @@ function CardItem(props) {
                         <h5 className="text-md font-bold tracking-tight text-gray-900 dark:text-white overflow-auto">
                             {props.data.name}
                         </h5>
-                        <p className="font-normal text-gray-700 dark:text-gray-400 overflow-auto">
-                            {props.data.description}
+                        <div className='flex flex-row justify-around'>
+                        <p className="font-light text-gray-700 dark:text-gray-400 overflow-auto text-sm">
+                            {props.data.organiser_info.name}
                         </p>
+                        <p className="font-thin text-gray-700 dark:text-gray-400 overflow-auto text-sm">
+                            {props.data.location}
+                        </p>
+                        </div>
                     </Card>
                     <div className="mt-1">
                         <AcceptGroup selectionHandle={selection} style={{ marginTop: '1rem' }} />
