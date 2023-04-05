@@ -21,24 +21,11 @@ function CardGroup(props) {
             console.log("CHECK: ", props.currentEmotion);
             const data = await axios.get(`http://localhost:3500/events?tag=${props.currentEmotion}`);
             if (data) {
-                setEventData(data.data[0]);
-                console.log(data.data[0]);
+                setEventData(data.data);
+                console.log(data.data);
             }
         }
-        // 
-        //fetchData().catch(console.error);
-        setEventData([{
-            img: "https://flowbite.com/docs/images/blog/image-1.jpg",
-            title: 'Cat',
-            description: 'Cat pics',
-            id: 123
-        },
-        {
-            img: "https://flowbite.com/docs/images/blog/image-1.jpg",
-            title: 'Cat123123712371273',
-            description: 'Heheheheheh',
-            id: 1234554
-        }]);
+        fetchData().catch(console.error);
     }, [])
 
     return (
