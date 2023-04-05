@@ -74,6 +74,60 @@ const getEventsByTag = asyncHandler(async (req, res) => {
     res.status(200).json(events);
 });
 
+// @desc    Get tags of the event
+// @route   POST /events/tags
+// @access  Public
+
+const getTagsByEventId = asyncHandler(async (req, res) => {
+    const event_id = req.body.event_id;
+    const tag_value = req.body.tag_value;
+    const user_id = req.body.user_id || '642d1f20983a3dc6e57523bd'; 
+
+    if (!event_id) {
+        return res.status(400).json({ message: "Please provide an event id" });
+    }
+
+    // get the event tags
+    const tags = await Event.findById(event_id).select('tags').lean().exec();
+
+    if (!tags) {
+        return res.status(404).json({ message: "No tags found for this event" });
+    }
+
+    // get user's top tags
+    const topTags = await User.findById(user_id).select('topTags').lean().exec();
+
+    // for each tag
+    tags.tags.forEach(tag => {
+        // check if tag exists in topTags
+        if (topTags.topTags[tag]) {
+            if(tag_value == 1){
+                topTags.topTags[tag] += 1;
+            }else{
+                topTags.topTags[tag] -= 1;
+            }
+        } else {
+            if(tag_value == 1){
+                topTags.topTags[tag] = 1;
+            }else{
+                topTags.topTags[tag] = 0;
+            }
+        }
+
+    });
+
+    // save topTags to db
+    const saveTopTags = await User.findByIdAndUpdate(user_id, { topTags: topTags.topTags }, { new: true }).lean().exec();
+
+    if (!saveTopTags) {
+        return res.status(500).json({ message: "Error saving top tags" });
+    }
+
+    return res.status(200).json('Tags updated successfully');
+
+});
+
+
 // @desc    Create new event
 // @route   POST /events
 // @access  Public
@@ -97,5 +151,5 @@ const createNewEvent = asyncHandler(async (req, res) => {
     res.status(201).json(`Event created successfully`);
 });
 
-module.exports = { getEventsByTag, createNewEvent, suggestEvents };
+module.exports = { getEventsByTag, createNewEvent, suggestEvents, getTagsByEventId };
 

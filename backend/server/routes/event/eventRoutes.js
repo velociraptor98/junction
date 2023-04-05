@@ -7,6 +7,9 @@ router.route('/')
     .post(eventController.createNewEvent)
 
 router.route('/suggest')
-    .post(eventController.suggestEvents)
-    
+.post(eventController.suggestEvents)
+
+router.route('/tags')
+    .post(eventController.getTagsByEventId)
+
 module.exports = router
