@@ -4,7 +4,7 @@ function CardItem(props) {
 
     const selection = (select) => {
         // Fill over the code for handling the next pages
-        props.selectionHandlerHandle({key:props.data.id, value: select});
+        props.selectionHandlerHandle({key:props.data._id, value: select});
     }
 
     return ( 
@@ -18,7 +18,7 @@ function CardItem(props) {
                             {props.data.description}
                         </p>
                     </Card>
-                    <div className="mt-4">
+                    <div className="mt-2">
                         <AcceptGroup selectionHandle={selection} style={{ marginTop: '1rem' }} />
                     </div>
                 </div>
