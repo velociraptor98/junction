@@ -50,23 +50,22 @@ function App() {
       <nav className={`${currentPallete}`}>
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <a className="flex items-center">
-            {/* <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Logo" /> */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hopp</span>
           </a>
           <div className="flex items-center space-evenly">
             <Button
             onClick={()=>updateState("journal")}
-            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-2">
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-1">
               Journal
             </Button>
             <Button
             onClick={()=>updateState("feed")}
-            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-2">
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-1">
               Events
             </Button>
             <Button
             onClick={()=>updateState("help")}
-            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-2">
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-sm rounded-lg text-sm px-1 py-1.5 text-center mr-2 mb-1">
               Helpline
             </Button>
           </div>

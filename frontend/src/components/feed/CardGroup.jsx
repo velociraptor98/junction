@@ -18,7 +18,6 @@ function CardGroup(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log("CHECK: ", props.currentEmotion);
             const data = await axios.get(`http://localhost:3500/events?tag=${props.currentEmotion}`);
             if (data) {
                 setEventData(data.data);
