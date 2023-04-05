@@ -26,7 +26,9 @@ The repo contains 2 sets of projects. The backend components as well as the fron
 
 ### Backend
 * Navigate to the backend folder.
+* Create a ***.env file*** in the server folder. Add the following keys ***MONGO_DB_URL*** and ***PORT***. 
 * use ***npm install*** to install the node packages.
+* Navigate to the server folder.
 * Simply run ***node server*** to start the backend service
 * (Note: the backend server will by default run on port 3500. Do not change this)
 
