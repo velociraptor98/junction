@@ -6,6 +6,9 @@ const asyncHandler = require("express-async-handler"); // asyncHandler is used t
 // @access  Public
 
 const getEventsByTag = asyncHandler(async (req, res) => {
+    
+    req.query.tag = req.query.tag.replace(/['"]+/g, '');
+
     const tag = req.query.tag;
 
     if (!tag) {
