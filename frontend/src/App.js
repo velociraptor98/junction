@@ -25,10 +25,10 @@ function App() {
       setCurrentPallete("bg-gradient-to-r from-violet-300 to-violet-400");
     }
     else if (currentEmotion === 'happy') {
-      setCurrentPallete("bg-gradient-to-r from-green-200 via-green-300 to-blue-500");
+      setCurrentPallete("bg-gradient-to-l from-green-300 via-blue-500 to-purple-600");
     }
     else if (currentEmotion === 'ecstatic') {
-      setCurrentPallete("bg-gradient-to-b bg-gradient-to-tr from-violet-500 to-orange-300");
+      setCurrentPallete("bg-gradient-to-l from-pink-500 via-red-500 to-yellow-500");
     }
     else {
       setCurrentPallete("bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500");
