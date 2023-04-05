@@ -1,6 +1,6 @@
 # HOPP
 
-##Introduction
+## Introduction
 
 This project is the submission for the mental health track, for the junction-x-exeter hackathon. Go through the readme to understand how the project needs to be setup.
 
@@ -26,15 +26,15 @@ The repo contains 2 sets of projects. The backend components as well as the fron
 
 ### Backend
 * Navigate to the backend folder.
-* use *** npm install *** to install the node packages.
-* Simply run *** node server *** to start the backend service
+* use ***npm install*** to install the node packages.
+* Simply run ***node server*** to start the backend service
 * (Note: the backend server will by default run on port 3500. Do not change this)
 
 
 ### Frontend
 
 * Navigate to the frontend folder
-* use *** npm install *** to install the node packages.
-* use *** npm run build *** to compile the react project.
-* use *** npm run start *** to start the web app.
+* use ***npm install*** to install the node packages.
+* use ***npm run build*** to compile the react project.
+* use ***npm run start*** to start the web app.
 * (Note: parts of the application has the endpoint for backend services harcoded. Changing the .env for this will cause the application to break.)
