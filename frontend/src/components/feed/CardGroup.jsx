@@ -9,6 +9,13 @@ function CardGroup(props) {
     const [eventData, setEventData] = useState([]);
     const selectionHandler = (select) => {
         let tempArray = itemList;
+        // get the tag of the event 
+        axios.post(`http://localhost:3500/events/tags`, { event_id: select.key, tag_value: select.value })
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+
         tempArray.push(select);
         setItemList(tempArray);
         if (currentCounter < eventData.length && eventData.length > 0) {
