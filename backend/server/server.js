@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 // 3000 fallback port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 const connectMongo = require("./db/conn");
 const mongoose = require('mongoose')
 // get driver connection
