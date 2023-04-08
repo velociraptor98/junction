@@ -43,5 +43,5 @@ The repo contains 2 sets of projects. The backend components as well as the fron
 
 ### Demo Application 
 
-![Screenshot](/img_1.jpg)
-![Screenshot](/img_2.jpg)
+![Screenshot](/img_2.png)
+![Screenshot](/img_1.png)
