@@ -40,3 +40,8 @@ The repo contains 2 sets of projects. The backend components as well as the fron
 * use ***npm run build*** to compile the react project.
 * use ***npm run start*** to start the web app.
 * (Note: parts of the application has the endpoint for backend services harcoded. Changing the .env for this will cause the application to break.)
+
+### Demo Application 
+
+![Screenshot](/img_1.jpg)
+![Screenshot](/img_2.jpg)
